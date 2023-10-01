@@ -45,7 +45,9 @@ def read_all_records():
 
 def read_record_id(id):
     cur.execute('SELECT * FROM diabetes WHERE id=?', (id,))
-    return cur.fetchone()
+    res = cur.fetchone()
+    print('Record ' + str(id) + ": ", res)
+    return res
 
 
 def update_record(id,pregnancies,glucose,blood_pressure,skin_thickness,insulin,bmi,diabetes_pedigree_function,age,outcome):
